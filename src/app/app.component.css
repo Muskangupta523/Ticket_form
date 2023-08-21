@@ -1,0 +1,47 @@
+
+  /* .img{
+    height: 200px;
+    width: 100px;
+    background-image: url(img-min.png);
+    background-color: blueviolet;
+  } */
+  
+  .mat-toolbar{
+    width: 95vw;
+    height: 17vh;
+    padding-top: 5px;
+    padding-left: 200px;
+    padding-right: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .tool{
+    width: 60vw;
+    height: 14vh;
+    display: flex;
+     /* align-items: center; 
+     justify-content: center;  */
+    padding-left: 15px;
+    padding-top: 19px;
+    background-color: #c7d6ee;
+    border-radius: 20px;
+  }
+  .ab{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.abc{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+  

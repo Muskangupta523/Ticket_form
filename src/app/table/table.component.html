@@ -1,0 +1,67 @@
+<div class="body">
+  <div class="inner_body">
+    <div class="btn">
+      <div class="btn1">
+        <div class="btn1a">
+          <button mat-raised-button (click)=" openDialog()">ADD(+) </button>
+        </div>
+        <div class="btn1b">
+           <input type="text" placeholder="Search">
+        </div>
+      </div>
+    </div>
+
+    <table mat-table [dataSource]="dataSource">
+
+      <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <div class="main_content">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let element; index as i"> {{element?.id}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="ticket">
+          <th mat-header-cell *matHeaderCellDef> Ticket </th>
+          <td mat-cell *matCellDef="let element"> {{element?.ticket}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="assignedto">
+          <th mat-header-cell *matHeaderCellDef> Assigned To </th>
+          <td mat-cell *matCellDef="let element"> {{element?.assignedto}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef> Date </th>
+          <td mat-cell *matCellDef="let element"> {{element?.date | date}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Status">
+          <th mat-header-cell *matHeaderCellDef> Status </th>
+          <td mat-cell *matCellDef="let element"> {{element?.Status}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef> Action </th>
+
+          <td mat-cell *matCellDef="let element; index as i" >
+            <div class="icon"><button (click)="deleteitem(i)"><fa-icon [icon]="Icon" ></fa-icon>
+              </button>
+              <button><fa-icon [icon]="edit"></fa-icon>
+              </button>
+            </div>
+
+          </td>
+        </ng-container>
+      </div>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>
